@@ -43,24 +43,80 @@ class connector extends \local_ai_manager\base_connector {
             'gpt-4.1-nano-2025-04-14',
             'gpt-4-turbo',
             'gpt-3.5-turbo',
-            'gpt-4'
+            'gpt-4',
+            'gpt-4.5-preview',
+            'o1-preview',
+            'o3-mini'
+        ];
+
+        $claudemodels = [
+            'claude-opus-4-20250514',
+            'claude-sonnet-4-20250514',
+            'claude-3-7-sonnet-20250219-thinking'
+        ];
+
+        $deepseekmodels = [
+            'deepseek-r1-0528',
+            'deepseek-v3-0324'
+        ];
+
+        $geminimodels = [
+            'gemini-2.0-flash',
+            'gemini-2.0-flash-lite',
+            'gemini-2.5-pro-preview-05-06'
+        ];
+
+        $grokmodels = [
+            'grok-3-beta',
+            'grok-3-deepsearch',
+            'grok-3-mini-fast-beta',
+            'grok-3-reasoner'
+        ];
+
+        $audiomodels = [
+            'tts-1',
+            'tts-1-hd',
+            'whisper-1'
+        ];
+
+        $imagemodels = [
+            'imagen-3.0-generate-002'
+        ];
+
+        $allchatmodels = array_merge(
+            $chatgptmodels,
+            $claudemodels,
+            $deepseekmodels,
+            $geminimodels,
+            $grokmodels
+        );
+
+        $visionmodels = [
+            'gpt-4o',
+            'gpt-4o-mini',
+            'gpt-4.1-2025-04-14',
+            'gpt-4.1-mini-2025-04-14',
+            'gpt-4.1-nano-2025-04-14',
+            'gpt-4-turbo',
+            'gpt-4',
+            'gpt-4.5-preview',
+            'claude-opus-4-20250514',
+            'claude-sonnet-4-20250514',
+            'gemini-2.0-flash',
+            'gemini-2.0-flash-lite',
+            'gemini-2.5-pro-preview-05-06'
         ];
 
         return [
-            'chat' => $chatgptmodels,
-            'feedback' => $chatgptmodels,
-            'singleprompt' => $chatgptmodels,
-            'translate' => $chatgptmodels,
-            'itt' => [
-                'gpt-4o',
-                'gpt-4o-mini',
-                'gpt-4.1-2025-04-14',
-                'gpt-4.1-mini-2025-04-14',
-                'gpt-4.1-nano-2025-04-14',
-                'gpt-4-turbo',
-                'gpt-4'
-            ],
+            'chat' => $allchatmodels,
+            'feedback' => $allchatmodels,
+            'singleprompt' => $allchatmodels,
+            'translate' => $allchatmodels,
+            'itt' => $visionmodels,
+            'audio' => $audiomodels,
+            'image' => $imagemodels,
         ];
+
 
     }
 

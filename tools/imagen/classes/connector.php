@@ -46,7 +46,7 @@ class connector extends base_connector {
     #[\Override]
     public function get_models_by_purpose(): array {
         return [
-                'imggen' => ['imagegeneration@006', 'imagen-3.0-generate-001'],
+                'imggen' => ['imagegeneration@006', 'imagen-3.0-generate-001', 'imagen-3.0-generate-002'],
         ];
     }
 

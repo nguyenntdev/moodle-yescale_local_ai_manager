@@ -24,8 +24,8 @@
  */
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version  = 2025060400;
+$plugin->version  = 2025060401;
 $plugin->requires = 2023042403;
-$plugin->release = '1.0.0';
+$plugin->release = '1.1';
 $plugin->component = 'aitool_openaitts';
 $plugin->maturity = MATURITY_ALPHA;

@@ -38,14 +38,14 @@ class connector extends base_connector {
     #[\Override]
     public function get_models_by_purpose(): array {
         return [
-                'imggen' => ['dall-e-2', 'dall-e-3'],
+                'imggen' => ['dall-e-3', 'imagen-3.0-generate-002', 'flux-pro', 'flux-pro-max', 'flux.1.1-pro', 'ideogram-generate-v3', 'kling-image', 'kling-virtual_try_on', 'mj_imagine', 'gpt-image-1', 'recraftv3', 'grok-2-image-1212'],
         ];
     }
 
     #[\Override]
     public function get_prompt_data(string $prompttext, request_options $requestoptions): array {
         $options = $requestoptions->get_options();
-        $defaultimagesize = $this->instance->get_model() === 'dall-e-2' ? '256x256' : '1024x1024';
+        $defaultimagesize = $this->instance->get_model() === 'dall-e-3' ? '256x256' : '1024x1024';
         $parameters = [
                 'prompt' => $prompttext,
                 'size' => empty($options['sizes'][0]) ? $defaultimagesize : $options['sizes'][0],
@@ -106,22 +106,88 @@ class connector extends base_connector {
     public function get_available_options(): array {
         $options = [];
         switch ($this->instance->get_model()) {
-            case 'dall-e-2':
-                $options['sizes'] = [
-                        ['key' => '256x256', 'displayname' => get_string('small', 'local_ai_manager') . ' (256px x 256px)'],
-                        ['key' => '512x512', 'displayname' => get_string('medium', 'local_ai_manager') . ' (512px x 512px)'],
-                        ['key' => '1024x1024', 'displayname' => get_string('large', 'local_ai_manager') . ' (1024px x 1024px)'],
-                ];
-                break;
-            case 'dall-e-3':
-            case aitool_option_azure::get_azure_model_name('dalle'):
-                // We assume that if using Azure (in which we would have PRECONFIGURED_MODEL as model) we only can deploy dall-e-3.
-                $options['sizes'] = [
+                case 'dall-e-3':
+                case aitool_option_azure::get_azure_model_name('dalle'):
+                    // We assume that if using Azure (in which we would have PRECONFIGURED_MODEL as model) we only can deploy dall-e-3.
+                    $options['sizes'] = [
                         ['key' => '1024x1024', 'displayname' => get_string('squared', 'local_ai_manager') . ' (1024px x 1024px)'],
                         ['key' => '1792x1024', 'displayname' => get_string('landscape', 'local_ai_manager') . ' (1792px x 1024px)'],
                         ['key' => '1024x1792', 'displayname' => get_string('portrait', 'local_ai_manager') . ' (1024px x 1792px)'],
-                ];
-                break;
+                    ];
+                    break;
+                
+                case 'imagen-3.0-generate-002':
+                    $options['sizes'] = [
+                        ['key' => '1024x1024', 'displayname' => get_string('squared', 'local_ai_manager') . ' (1024px x 1024px)'],
+                        ['key' => '1536x1024', 'displayname' => get_string('landscape', 'local_ai_manager') . ' (1536px x 1024px)'],
+                        ['key' => '1024x1536', 'displayname' => get_string('portrait', 'local_ai_manager') . ' (1024px x 1536px)'],
+                    ];
+                    break;
+                
+                case 'flux-pro':
+                case 'flux-pro-max':
+                case 'flux.1.1-pro':
+                    $options['sizes'] = [
+                        ['key' => '1024x1024', 'displayname' => get_string('squared', 'local_ai_manager') . ' (1024px x 1024px)'],
+                        ['key' => '1344x768', 'displayname' => get_string('landscape', 'local_ai_manager') . ' (1344px x 768px)'],
+                        ['key' => '768x1344', 'displayname' => get_string('portrait', 'local_ai_manager') . ' (768px x 1344px)'],
+                        ['key' => '1536x1024', 'displayname' => get_string('wide_landscape', 'local_ai_manager') . ' (1536px x 1024px)'],
+                        ['key' => '1024x1536', 'displayname' => get_string('tall_portrait', 'local_ai_manager') . ' (1024px x 1536px)'],
+                    ];
+                    break;
+                
+                case 'ideogram-generate-v3':
+                    $options['sizes'] = [
+                        ['key' => '1024x1024', 'displayname' => get_string('squared', 'local_ai_manager') . ' (1024px x 1024px)'],
+                        ['key' => '1280x720', 'displayname' => get_string('landscape', 'local_ai_manager') . ' (1280px x 720px)'],
+                        ['key' => '720x1280', 'displayname' => get_string('portrait', 'local_ai_manager') . ' (720px x 1280px)'],
+                        ['key' => '1440x1024', 'displayname' => get_string('wide_landscape', 'local_ai_manager') . ' (1440px x 1024px)'],
+                        ['key' => '1024x1440', 'displayname' => get_string('tall_portrait', 'local_ai_manager') . ' (1024px x 1440px)'],
+                    ];
+                    break;
+                
+                case 'kling-image':
+                case 'kling-virtual_try_on':
+                    $options['sizes'] = [
+                        ['key' => '1024x1024', 'displayname' => get_string('squared', 'local_ai_manager') . ' (1024px x 1024px)'],
+                        ['key' => '1280x960', 'displayname' => get_string('landscape', 'local_ai_manager') . ' (1280px x 960px)'],
+                        ['key' => '960x1280', 'displayname' => get_string('portrait', 'local_ai_manager') . ' (960px x 1280px)'],
+                    ];
+                    break;
+                
+                case 'mj_imagine':
+                    $options['sizes'] = [
+                        ['key' => '1024x1024', 'displayname' => get_string('squared', 'local_ai_manager') . ' (1024px x 1024px)'],
+                        ['key' => '1456x816', 'displayname' => get_string('landscape', 'local_ai_manager') . ' (1456px x 816px)'],
+                        ['key' => '816x1456', 'displayname' => get_string('portrait', 'local_ai_manager') . ' (816px x 1456px)'],
+                    ];
+                    break;
+                
+                case 'gpt-image-1':
+                    $options['sizes'] = [
+                        ['key' => '1024x1024', 'displayname' => get_string('squared', 'local_ai_manager') . ' (1024px x 1024px)'],
+                        ['key' => '1792x1024', 'displayname' => get_string('landscape', 'local_ai_manager') . ' (1792px x 1024px)'],
+                        ['key' => '1024x1792', 'displayname' => get_string('portrait', 'local_ai_manager') . ' (1024px x 1792px)'],
+                    ];
+                    break;
+                
+                case 'recraftv3':
+                    $options['sizes'] = [
+                        ['key' => '1024x1024', 'displayname' => get_string('squared', 'local_ai_manager') . ' (1024px x 1024px)'],
+                        ['key' => '1365x1024', 'displayname' => get_string('landscape', 'local_ai_manager') . ' (1365px x 1024px)'],
+                        ['key' => '1024x1365', 'displayname' => get_string('portrait', 'local_ai_manager') . ' (1024px x 1365px)'],
+                        ['key' => '1536x1024', 'displayname' => get_string('wide_landscape', 'local_ai_manager') . ' (1536px x 1024px)'],
+                        ['key' => '1024x1536', 'displayname' => get_string('tall_portrait', 'local_ai_manager') . ' (1024px x 1536px)'],
+                    ];
+                    break;
+                
+                case 'grok-2-image-1212':
+                    $options['sizes'] = [
+                        ['key' => '1024x1024', 'displayname' => get_string('squared', 'local_ai_manager') . ' (1024px x 1024px)'],
+                        ['key' => '1344x768', 'displayname' => get_string('landscape', 'local_ai_manager') . ' (1344px x 768px)'],
+                        ['key' => '768x1344', 'displayname' => get_string('portrait', 'local_ai_manager') . ' (768px x 1344px)'],
+                    ];
+                    break;
             default:
                 $options['sizes'] = [];
         }

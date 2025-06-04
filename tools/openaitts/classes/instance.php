@@ -58,7 +58,7 @@ class instance extends base_instance {
             // So we overwrite the default "preconfigured" value by a better model name.
             $this->set_model(aitool_option_azure::get_azure_model_name($this->get_connector()));
         } else {
-            $endpoint = 'https://api.openai.com/v1/audio/speech';
+            $endpoint = 'https://api.yescale.io/v1/audio/speech';
         }
         $this->set_endpoint($endpoint);
 

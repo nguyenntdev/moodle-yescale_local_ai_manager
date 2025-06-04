@@ -118,7 +118,7 @@ final class manager_test extends \advanced_testcase {
         $userusage->store();
 
         $chatgptinstance = new instance();
-        $chatgptinstance->set_model('gpt-4o');
+        $chatgptinstance->set_model('gpt-4.1-nano-2025-04-14');
 
         // Fake a stream object, because we will mock the method that access it anyway.
         $streamresponse = new Stream(fopen('php://temp', 'r+'));
@@ -127,7 +127,7 @@ final class manager_test extends \advanced_testcase {
         // Fake usage object.
         $usage = new usage(50.0, 30.0, 20.0);
         // Fake prompt_response object.
-        $promptresponse = prompt_response::create_from_result('gpt-4o', $usage, $message);
+        $promptresponse = prompt_response::create_from_result('gpt-4.1-nano-2025-04-14', $usage, $message);
 
         $chatgptconnector =
                 $this->getMockBuilder('\aitool_chatgpt\connector')->setConstructorArgs([$chatgptinstance])->getMock();

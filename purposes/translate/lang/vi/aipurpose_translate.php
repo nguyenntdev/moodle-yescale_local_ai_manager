@@ -15,21 +15,15 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Cache definitions.
+ * Lang strings for aipurpose_translate - EN.
  *
- * @package   aitool_googlesynthesize
- * @copyright 2024 ISB Bayern
- * @author    Philipp Memmel
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    aipurpose_translate
+ * @copyright  ISB Bayern, 2024
+ * @author     Philipp Memmel
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
-
-$definitions = [
-        'googlesynthesizevoices' => [
-                'mode' => cache_store::MODE_APPLICATION,
-                'simplekeys' => true,
-                'simpledata' => false,
-                'canuselocalstore' => false,
-        ],
-];
+$string['pluginname'] = 'Dịch';
+$string['privacy:metadata'] = 'Subplugin mục đích "Dịch" của local ai_manager không lưu trữ bất kỳ dữ liệu cá nhân nào.';
+$string['requestcount'] = 'yêu cầu dịch';
+$string['requestcount_shortened'] = 'dịch';

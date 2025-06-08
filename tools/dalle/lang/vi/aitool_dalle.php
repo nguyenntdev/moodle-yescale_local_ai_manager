@@ -15,17 +15,15 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version file for aitool_ollama.
+ * Lang strings for aitool_dalle - EN.
  *
- * @package    aitool_ollama
+ * @package    aitool_dalle
  * @copyright  ISB Bayern, 2024
- * @author     Stefan Hanauska <stefan.hanauska@csg-in.de>
+ * @author     Dr. Peter Mayer
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-defined('MOODLE_INTERNAL') || die();
 
-$plugin->version  = 2024031701;
-$plugin->requires = 2023042403;
-$plugin->release = '0.0.1';
-$plugin->component = 'aitool_ollama';
-$plugin->maturity = MATURITY_ALPHA;
+$string['adddescription'] = 'Dall-E là một mô hình AI của OpenAI chuyên tạo hình ảnh từ mô tả văn bản.';
+$string['err_contentpolicyviolation'] = 'Yêu cầu của bạn đã bị từ chối do hệ thống an toàn của chúng tôi. Prompt của bạn có thể chứa nội dung không được phép.';
+$string['pluginname'] = 'Dall-E';
+$string['privacy:metadata'] = 'Subplugin công cụ "Dall-E" của local ai_manager không lưu trữ bất kỳ dữ liệu cá nhân nào.';

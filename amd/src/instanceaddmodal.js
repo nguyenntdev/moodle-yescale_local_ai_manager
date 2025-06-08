@@ -43,11 +43,14 @@ export const renderInstanceAddModal = async(instanceTableSelector) => {
     const descriptionStrings = await getStrings(descriptionStringsToFetch);
 
     for (let i = 0; i < pluginnameStringsToFetch.length; i++) {
-        toolsContext.push({
-            linklabel: pluginNameStrings[i],
-            addurl: aiConfig.tools[i].addurl,
-            adddescription: descriptionStrings[i],
-        });
+        // Only add tools that have valid language strings (not placeholder strings like [[pluginname]])
+        if (!pluginNameStrings[i].startsWith('[[') && !descriptionStrings[i].startsWith('[[')) {
+            toolsContext.push({
+                linklabel: pluginNameStrings[i],
+                addurl: aiConfig.tools[i].addurl,
+                adddescription: descriptionStrings[i],
+            });
+        }
     }
     const templateContext = {
         tools: toolsContext

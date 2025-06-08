@@ -35,7 +35,12 @@ class connector extends \local_ai_manager\base_connector {
     #[\Override]
     public function get_models_by_purpose(): array {
         return [
-                'tts' => ['tts-1'],
+                'tts-1' => ['tts-1'],
+                'tts-1-hd' => ['tts-1-hd'],
+                'whisper-1' => ['whisper-1'],
+                'gpt-4o-mini-audio-preview-2024-12-17' => ['gpt-4o-mini-audio-preview-2024-12-17'],
+                'gpt-4o-audio-preview-2024-12-17' => ['gpt-4o-audio-preview-2024-12-17'],
+                
         ];
     }
 

@@ -15,17 +15,15 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version file for aitool_googlesynthesize.
+ * Lang strings for aipurpose_feedback - EN.
  *
- * @package    aitool_googlesynthesize
+ * @package    aipurpose_feedback
  * @copyright  ISB Bayern, 2024
  * @author     Philipp Memmel
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-defined('MOODLE_INTERNAL') || die();
 
-$plugin->version  = 2024110500;
-$plugin->requires = 2023042403;
-$plugin->release = '0.0.1';
-$plugin->component = 'aitool_googlesynthesize';
-$plugin->maturity = MATURITY_ALPHA;
+$string['pluginname'] = 'Phản hồi';
+$string['privacy:metadata'] = 'Subplugin mục đích "Phản hồi" của local ai_manager không lưu trữ bất kỳ dữ liệu cá nhân nào.';
+$string['requestcount'] = 'yêu cầu phản hồi';
+$string['requestcount_shortened'] = 'phản hồi';

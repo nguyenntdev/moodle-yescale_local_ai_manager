@@ -14,25 +14,16 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace aitool_googlesynthesize;
-
-use local_ai_manager\base_instance;
-use local_ai_manager\local\aitool_option_temperature;
-use local_ai_manager\local\aitool_option_vertexai;
-
 /**
- * Instance class for the connector instance of aitool_googlesynthesize.
+ * Lang strings for aipurpose_chat - EN.
  *
- * @package    aitool_googlesynthesize
- * @copyright  2024 ISB Bayern
- * @author     Philipp Memmel
+ * @package    aipurpose_chat
+ * @copyright  ISB Bayern, 2024
+ * @author     Dr. Peter Mayer
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class instance extends base_instance {
 
-    #[\Override]
-    protected function extend_form_definition(\MoodleQuickForm $mform): void {
-        $mform->setDefault('endpoint', 'https://texttospeech.googleapis.com/v1/text:synthesize');
-        $mform->freeze('endpoint');
-    }
-}
+$string['pluginname'] = 'Trò chuyện';
+$string['privacy:metadata'] = 'Subplugin mục đích "Trò chuyện" của local ai_manager không lưu trữ bất kỳ dữ liệu cá nhân nào.';
+$string['requestcount'] = 'yêu cầu trò chuyện';
+$string['requestcount_shortened'] = 'trò chuyện';

@@ -15,17 +15,15 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Lang strings for aitool_gemini - EN.
+ * Lang strings for aipurpose_itt - EN.
  *
- * @package    aitool_gemini
- * @copyright  ISB Bayern, 2024
+ * @package    aipurpose_itt
+ * @copyright  2024 ISB Bayern
  * @author     Philipp Memmel
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['adddescription'] = 'Gemini, Google DeepMind\'s AI model, combines advanced language models (LLMs) with tools and multimodal capabilities.';
-$string['googlebackend'] = 'Google Backend to use';
-$string['googlebackendgoogleai'] = 'Google AI';
-$string['googlebackendvertexai'] = 'Vertex AI';
-$string['pluginname'] = 'Gemini';
-$string['privacy:metadata'] = 'The local ai_manager tool subplugin "Gemini" does not store any personal data.';
+$string['pluginname'] = 'Chuyển hình ảnh thành văn bản';
+$string['privacy:metadata'] = 'Subplugin mục đích "Chuyển hình ảnh thành văn bản" của local ai_manager không lưu trữ bất kỳ dữ liệu cá nhân nào.';
+$string['requestcount'] = 'yêu cầu chuyển hình ảnh thành văn bản';
+$string['requestcount_shortened'] = 'chuyển hình ảnh thành văn bản';

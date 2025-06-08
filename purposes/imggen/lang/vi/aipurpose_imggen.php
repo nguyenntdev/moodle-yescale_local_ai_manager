@@ -15,33 +15,15 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * aitool_googlesynthesize privacy provider class.
+ * Lang strings for aipurpose_imggen - EN.
  *
- * @package    aitool_googlesynthesize
+ * @package    aipurpose_imggen
  * @copyright  ISB Bayern, 2024
- * @author     Philipp Memmel
+ * @author     Dr. Peter Mayer
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace aitool_googlesynthesize\privacy;
-
-/**
- * aitool_googlesynthesize privacy provider class.
- *
- * @package    aitool_googlesynthesize
- * @copyright  ISB Bayern, 2024
- * @author     Philipp Memmel
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class provider implements \core_privacy\local\metadata\null_provider {
-
-    /**
-     * Get the language string identifier with the component's language
-     * file to explain why this plugin stores no data.
-     *
-     * @return  string
-     */
-    public static function get_reason(): string {
-        return 'privacy:metadata';
-    }
-}
+$string['pluginname'] = 'Tạo hình ảnh';
+$string['privacy:metadata'] = 'Subplugin mục đích "Tạo hình ảnh" của local ai_manager không lưu trữ bất kỳ dữ liệu cá nhân nào.';
+$string['requestcount'] = 'yêu cầu tạo hình ảnh';
+$string['requestcount_shortened'] = 'tạo hình ảnh';

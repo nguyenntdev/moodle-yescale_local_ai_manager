@@ -15,15 +15,15 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Lang strings for aitool_googlesynthesize - EN.
+ * Lang strings for aipurpose_tts - EN.
  *
- * @package    aitool_googlesynthesize
+ * @package    aipurpose_tts
  * @copyright  ISB Bayern, 2024
- * @author     Philipp Memmel
+ * @author     Dr. Peter Mayer
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['adddescription'] = 'Google Synthesize, often in the context of "Google Text-to-Speech", is a tool for converting text into spoken language.';
-$string['cachedef_googlesynthesizevoices'] = 'Cache for storing available voices for the google synthesize service';
-$string['pluginname'] = 'Google Synthesize';
-$string['privacy:metadata'] = 'The local ai_manager tool subplugin "Google Synthesize" does not store any personal data.';
+$string['pluginname'] = 'Tạo giọng nói';
+$string['privacy:metadata'] = 'Subplugin mục đích "Tạo giọng nói" của local ai_manager không lưu trữ bất kỳ dữ liệu cá nhân nào.';
+$string['requestcount'] = 'yêu cầu tạo giọng nói';
+$string['requestcount_shortened'] = 'tạo giọng nói';

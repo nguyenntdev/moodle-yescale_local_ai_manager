@@ -15,33 +15,15 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * aitool_ollama privacy provider class.
+ * Lang strings for aipurpose_singleprompt - EN.
  *
- * @package    aitool_ollama
+ * @package    aipurpose_singleprompt
  * @copyright  ISB Bayern, 2024
- * @author     Stefan Hanauska <stefan.hanauska@csg-in.de>
+ * @author     Philipp Memmel
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace aitool_ollama\privacy;
-
-/**
- * aitool_ollama privacy provider class.
- *
- * @package    aitool_ollama
- * @copyright  ISB Bayern, 2024
- * @author     Stefan Hanauska <stefan.hanauska@csg-in.de>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class provider implements \core_privacy\local\metadata\null_provider {
-
-    /**
-     * Get the language string identifier with the component's language
-     * file to explain why this plugin stores no data.
-     *
-     * @return  string
-     */
-    public static function get_reason(): string {
-        return 'privacy:metadata';
-    }
-}
+$string['pluginname'] = 'Một prompt duy nhất';
+$string['privacy:metadata'] = 'Subplugin mục đích "Một prompt duy nhất" của local ai_manager không lưu trữ bất kỳ dữ liệu cá nhân nào.';
+$string['requestcount'] = 'yêu cầu văn bản';
+$string['requestcount_shortened'] = 'văn bản';

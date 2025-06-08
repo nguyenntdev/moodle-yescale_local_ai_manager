@@ -15,15 +15,14 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Lang strings for aitool_ollama.
+ * Lang strings for aitool_openaitts - EN.
  *
- * @package    aitool_ollama
+ * @package    aitool_openaitts
  * @copyright  ISB Bayern, 2024
- * @author     Stefan Hanauska <stefan.hanauska@csg-in.de>
+ * @author     Dr. Peter Mayer
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['adddescription'] = 'Ollama is a platform or service that focuses on the use of language AI and generative AI.';
-$string['formvalidation_noendpoint'] = 'You must specify a valid endpoint to your ollama instance';
-$string['pluginname'] = 'Ollama';
-$string['privacy:metadata'] = 'The local ai_manager tool subplugin "Ollama" does not store any personal data.';
+$string['adddescription'] = 'TTS là một mô hình chuyển văn bản thành giọng nói do OpenAI phát triển';
+$string['pluginname'] = 'OpenAI TTS';
+$string['privacy:metadata'] = 'Subplugin công cụ "OpenAI TTS" của local ai_manager không lưu trữ bất kỳ dữ liệu cá nhân nào.';

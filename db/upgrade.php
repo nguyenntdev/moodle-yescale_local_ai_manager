@@ -81,21 +81,13 @@ function xmldb_local_ai_manager_upgrade($oldversion) {
                 }
             }
             if ($record->purpose === 'tts') {
-                if ($record->model === 'openaitts_preconfigured_azure' || $record->model === 'tts-1') {
-                    $record->connector = 'openaitts';
-                } else {
-                    $record->connector = 'googlesynthesize';
-                }
+                $record->connector = 'openaitts';
             } else if ($record->purpose === 'imggen') {
                 $record->connector = 'dalle';
             } else {
                 // We have a text based language model.
-                if (str_starts_with($record->model, 'gemini-')) {
-                    $record->connector = 'gemini';
-                } else if (str_starts_with($record->model, 'gpt-') || $record->model === 'chatgpt_preconfigured_azure') {
+                if (str_starts_with($record->model, 'gpt-') || $record->model === 'chatgpt_preconfigured_azure') {
                     $record->connector = 'chatgpt';
-                } else {
-                    $record->connector = 'ollama';
                 }
             }
             $DB->update_record('local_ai_manager_request_log', $record);

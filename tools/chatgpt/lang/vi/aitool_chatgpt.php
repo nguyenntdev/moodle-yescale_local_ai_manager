@@ -15,17 +15,15 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version file for aitool_gemini.
+ * Lang strings for aitool_chatgpt - EN.
  *
- * @package    aitool_gemini
+ * @package    aitool_chatgpt
  * @copyright  ISB Bayern, 2024
- * @author     Philipp Memmel
+ * @author     Dr. Peter Mayer
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-defined('MOODLE_INTERNAL') || die();
 
-$plugin->version  = 2024120300;
-$plugin->requires = 2023042403;
-$plugin->release = '0.0.1';
-$plugin->component = 'aitool_gemini';
-$plugin->maturity = MATURITY_ALPHA;
+$string['adddescription'] = 'GPT là một mô hình AI đa năng được sử dụng cho các tương tác ngôn ngữ tự nhiên như hỗ trợ khách hàng, trợ lý ảo, tạo nội dung và nhiều hơn nữa.';
+$string['err_contentfilter'] = 'Yêu cầu của bạn đã bị từ chối do bộ lọc nội dung của công cụ bên ngoài. Prompt của bạn có thể chứa nội dung không được phép.';
+$string['pluginname'] = 'GPT';
+$string['privacy:metadata'] = 'Subplugin công cụ "GPT" của local ai_manager không lưu trữ bất kỳ dữ liệu cá nhân nào.';
